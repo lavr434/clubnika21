@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🍓 Клубника Цивильск — свежая ягода с доставкой</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #fefaf5; color: #2c2418; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .navbar { background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #ffe0c0; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; flex-wrap: wrap; gap: 16px; }
+        .logo { font-size: 1.7rem; font-weight: 700; color: #b3413a; display: flex; align-items: center; gap: 8px; }
+        .logo i { font-size: 2rem; color: #e45c4c; }
+        .nav-links { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; font-weight: 500; color: #4a3727; transition: 0.2s; }
+        .nav-links a:hover { color: #c73e2d; }
+        .phone-header { background: #eef4e6; padding: 8px 18px; border-radius: 60px; font-weight: 700; color: #2b5e2b; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: #d64531; color: white; border: none; padding: 12px 28px; border-radius: 48px; font-weight: 600; font-size: 1rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 14px rgba(214,69,49,0.25); transition: 0.2s; }
+        .btn-primary:hover { background: #b63624; transform: scale(0.98); }
+        .btn-outline { background: transparent; border: 1.5px solid #d64531; color: #d64531; padding: 10px 24px; border-radius: 48px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+        .btn-outline:hover { background: #d64531; color: white; }
+        .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; padding: 50px 0 60px; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.2; color: #3c2a1f; }
+        .hero-text h1 span { color: #d83a2a; }
+        .hero-text p { font-size: 1.2rem; margin: 20px 0 28px; color: #5f4a36; }
+        .hero-img { flex: 1; text-align: center; }
+        .hero-img img { width: 100%; max-width: 460px; border-radius: 48px; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15); object-fit: cover; }
+        section { padding: 70px 0; }
+        .section-title { font-size: 2.2rem; font-weight: 700; text-align: center; margin-bottom: 48px; color: #3a2a1c; position: relative; }
+        .section-title:after { content: ''; display: block; width: 70px; height: 4px; background: #d64531; margin: 12px auto 0; border-radius: 4px; }
+        .features { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .feature-card { background: white; padding: 28px 20px; border-radius: 36px; text-align: center; flex: 1 1 220px; box-shadow: 0 12px 24px -12px rgba(0,0,0,0.06); border: 1px solid #ffefdf; }
+        .feature-card i { font-size: 2.6rem; color: #e45c4c; margin-bottom: 18px; }
+        .products-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .product-card { background: white; border-radius: 40px; overflow: hidden; width: 280px; box-shadow: 0 16px 30px -12px rgba(0,0,0,0.08); transition: 0.25s; border: 1px solid #ffe2ca; }
+        .product-card:hover { transform: translateY(-6px); }
+        .product-img { height: 220px; overflow: hidden; }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .product-card:hover .product-img img { transform: scale(1.03); }
+        .product-info { padding: 20px 18px 24px; }
+        .product-info h3 { font-size: 1.5rem; margin-bottom: 8px; }
+        .price { font-size: 1.8rem; font-weight: 800; color: #c0392b; margin: 12px 0; }
+        .delivery-row { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
+        .delivery-card { background: white; border-radius: 36px; padding: 30px; flex: 1; box-shadow: 0 12px 28px rgba(0,0,0,0.05); border-left: 8px solid #d64531; }
+        .delivery-card h3 { font-size: 1.8rem; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .info-list { list-style: none; margin-top: 18px; }
+        .info-list li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-size: 1rem; }
+        .badge-time { background: #eaf8e6; padding: 6px 14px; border-radius: 80px; font-weight: 600; display: inline-block; margin: 10px 0; }
+        .contacts-flex { display: flex; flex-wrap: wrap; gap: 40px; background: #fff7f0; border-radius: 48px; padding: 40px; margin-top: 20px; }
+        .contact-info { flex: 1; }
+        .contact-detail p { font-size: 1.2rem; margin: 12px 0; display: flex; align-items: center; gap: 12px; }
+        .form-side { flex: 1; background: white; padding: 30px; border-radius: 32px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 18px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px 16px; border-radius: 28px; border: 1px solid #e2cfbc; font-family: inherit; background: #fffbf8; }
+        .radio-group { display: flex; gap: 20px; margin: 12px 0; }
+        footer { background: #2b241c; color: #ddd2c4; padding: 36px 0; text-align: center; margin-top: 20px; }
+        @media (max-width: 780px) {
+            .hero-text h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .nav-flex { flex-direction: column; }
+            .contacts-flex { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo"><i class="fas fa-seedling"></i> Цивильская клубника</div>
+        <div class="nav-links">
+            <a href="#products">Ягода</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#contacts">Контакты</a>
+            <a href="tel:+79999999999" class="phone-header"><i class="fas fa-phone-alt"></i> +7 (999) 999-99-99</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Сладкая клубника <span>из Цивильска</span> 🍓</h1>
+                <p>Эко-ягода с собственных полей. Самовывоз и быстрая доставка по городу. Только свежий урожай!</p>
+                <a href="#orderForm" class="btn-primary"><i class="fas fa-shopping-basket"></i> Заказать сейчас</a>
+                <a href="#delivery" class="btn-outline" style="margin-left: 12px;"><i class="fas fa-truck"></i> Условия</a>
+            </div>
+            <div class="hero-img">
+                <!-- главное фото из самого первого варианта -->
+                <img src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?w=600&auto=format" alt="Свежая клубника">
+            </div>
+        </div>
+    </div>
+
+    <section style="background: #fff5ed;">
+        <div class="container">
+            <div class="section-title">Почему выбирают нас</div>
+            <div class="features">
+                <div class="feature-card"><i class="fas fa-tractor"></i><h3>Своя ферма</h3><p>Выращиваем в Цивильском районе без химии</p></div>
+                <div class="feature-card"><i class="fas fa-clock"></i><h3>Свежесть 24ч</h3><p>Сбор утром, доставка днём</p></div>
+                <div class="feature-card"><i class="fas fa-hand-holding-heart"></i><h3>Любовь к ягоде</h3><p>Каждая ягодка отборная, сладкая</p></div>
+                <div class="feature-card"><i class="fas fa-map-marker-alt"></i><h3>Цивильск</h3><p>Работаем для вас в центре города</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <div class="section-title">Наша клубника</div>
+            <div class="products-grid">
+                <!-- 1. Клубника садовая 1 кг - качественное фото из первой версии -->
+                <div class="product-card">
+                    <div class="product-img"><img src="https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Клубника садовая"></div>
+                    <div class="product-info"><h3>Клубника садовая</h3><p>Крупная, сочная, сорт "Элиста"</p><div class="price">350 ₽ <small>/ кг</small></div><button class="btn-primary" style="width:100%; justify-content:center;" onclick="orderProduct('Клубника садовая, 1 кг')"><i class="fas fa-cart-plus"></i> В корзину</button></div>
+                </div>
+                <!-- 2. Премиум лукошко - ваше новое фото Unsplash -->
+                <div class="product-card">
+                    <div class="product-img"><img src="https://images.unsplash.com/photo-1587815073078-f636169821e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHN0cmF3YmVycnl8ZW58MHx8MHx8fDA%3D" alt="Премиум лукошко"></div>
+                    <div class="product-info"><h3>Премиум лукошко</h3><p>Отборные ягоды, 500 г в эко-упаковке</p><div class="price">290 ₽ <small>/ 500г</small></div><button class="btn-primary" style="width:100%; justify-content:center;" onclick="orderProduct('Премиум лукошко (500г)')"> Выбрать</button></div>
+                </div>
+                <!-- 3. Семейная упаковка - ваше новое фото Unsplash -->
+                <div class="product-card">
+                    <div class="product-img"><img src="https://images.unsplash.com/photo-1651566537327-f2558ffe1092?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3RyYXdiZXJyeSUyMGluJTIwYm94fGVufDB8fDB8fHww" alt="Семейная упаковка"></div>
+                    <div class="product-info"><h3>Семейная упаковка</h3><p>2 кг отборной клубники для десертов</p><div class="price">650 ₽ <small>/ 2 кг</small></div><button class="btn-primary" style="width:100%; justify-content:center;" onclick="orderProduct('Семейная упаковка 2кг')">Заказать</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="delivery" style="background: #fff1e6;">
+        <div class="container">
+            <div class="section-title">Как получить ягоду</div>
+            <div class="delivery-row">
+                <div class="delivery-card">
+                    <h3><i class="fas fa-store"></i> Самовывоз</h3>
+                    <p><strong>📍 г. Цивильск, ул. Кооперативная, 5</strong> (ост. "Рынок")</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-calendar-week"></i> ПН–ПТ: 08:00 – 18:00</li>
+                        <li><i class="fas fa-calendar-times"></i> Сб–Вс: выходной (только предзаказ)</li>
+                        <li><i class="fas fa-box"></i> Заберите заказ без очереди</li>
+                        <li><i class="fas fa-ruble-sign"></i> Бесплатно</li>
+                    </ul>
+                    <div class="badge-time"><i class="fas fa-check-circle"></i> Работаем строго по графику</div>
+                </div>
+                <div class="delivery-card">
+                    <h3><i class="fas fa-truck-fast"></i> Доставка по Цивильску</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-clock"></i> ПН–ПТ: с 10:00 до 17:00</li>
+                        <li><i class="fas fa-map-pin"></i> В черте города – курьером</li>
+                        <li><i class="fas fa-motorcycle"></i> Стоимость доставки: 150 ₽</li>
+                        <li><i class="fas fa-sack-dollar"></i> При заказе от 1500 ₽ — доставка <strong>бесплатно</strong></li>
+                        <li><i class="fas fa-calendar-alt"></i> Заказы принимаются до 15:00 на следующий день</li>
+                    </ul>
+                    <div class="badge-time"><i class="fas fa-phone"></i> Уточняйте детали по телефону</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 36px;">
+                <span class="badge-time" style="background:#e5d5c2;"><i class="far fa-calendar-check"></i> Дата получения: рабочие дни (ПН-ПТ) с 8:00 до 18:00</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container">
+            <div class="section-title">Свяжитесь с нами</div>
+            <div class="contacts-flex">
+                <div class="contact-info">
+                    <h3>🍓 Цивильская ягодная лавка</h3>
+                    <div class="contact-detail">
+                        <p><i class="fas fa-phone-alt"></i> <strong>+7 (999) 999-99-99</strong> (звонки, WhatsApp)</p>
+                        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/79999999999?text=Здравствуйте! Хочу заказать клубнику" style="color:#2c5e2c;">Написать в WhatsApp</a></p>
+                        <p><i class="fas fa-location-dot"></i> г. Цивильск, ул. Кооперативная 5, павильон 2</p>
+                        <p><i class="far fa-clock"></i> График работы: ПН–ПТ 08:00 – 18:00<br>СБ, ВС – выходной, заказы онлайн 24/7</p>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="tel:+79999999999" class="btn-primary"><i class="fas fa-phone"></i> Позвонить сейчас</a>
+                    </div>
+                </div>
+                <div class="form-side" id="orderForm">
+                    <h3>Заказать клубнику 🛒</h3>
+                    <form action="https://formspree.io/f/mwvywyly" method="POST" id="strawberryOrder">
+                        <input type="hidden" name="_subject" value="Новый заказ клубники с сайта">
+                        <input type="hidden" name="_replyto" value="">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" id="phone" placeholder="Номер телефона" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="product" id="productSelect">
+                                <option value="Клубника садовая 1кг — 350₽">🍓 Клубника садовая 1кг — 350₽</option>
+                                <option value="Премиум лукошко 500г — 290₽">🍓 Премиум лукошко 500г — 290₽</option>
+                                <option value="Семейная упаковка 2кг — 650₽">🍓 Семейная упаковка 2кг — 650₽</option>
+                            </select>
+                        </div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="deliveryType" value="Самовывоз" checked> Самовывоз (бесплатно)</label>
+                            <label><input type="radio" name="deliveryType" value="Доставка"> Доставка (150₽ / бесплатно от 1500₽)</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="address" rows="2" placeholder="Пожелания, адрес для доставки" id="address"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%"><i class="fas fa-check"></i> Оформить заказ</button>
+                    </form>
+                    <p style="font-size: 0.75rem; margin-top: 16px;color:#a37e64;">Нажимая кнопку, вы соглашаетесь на обработку данных. Менеджер свяжется с вами в рабочие дни с 8 до 18.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>🍓 Клубничная ферма — г. Цивильск, Чувашская Республика</p>
+        <p>Режим работы: ПН–ПТ 08:00–18:00 | Самовывоз и доставка по городу</p>
+        <p>Телефон: +7 (999) 999-99-99 | <i class="fab fa-instagram"></i> @clubnika_civilsk</p>
+    </div>
+</footer>
+
+<script>
+    window.orderProduct = function(productName) {
+        const select = document.getElementById('productSelect');
+        if (select) {
+            for(let i = 0; i < select.options.length; i++) {
+                if(select.options[i].value.includes(productName) || productName.includes(select.options[i].value)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+        document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+        const formSide = document.querySelector('.form-side');
+        formSide.style.transition = '0.2s';
+        formSide.style.boxShadow = '0 0 0 3px #d64531';
+        setTimeout(() => { formSide.style.boxShadow = ''; }, 1200);
+    };
+</script>
+</body>
+</html>
